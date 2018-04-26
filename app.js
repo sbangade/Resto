@@ -10,7 +10,7 @@ var express    = require("express"),
     
 var app = express();
 //mongodb://food:circle@ds259119.mlab.com:59119/restaurant
-mongoose.connect("mongodb://localhost/food_store_app");
+//mongoose.connect("mongodb://localhost/food_store_app");
 mongoose.connect("mongodb://food:circle@ds259119.mlab.com:59119/restaurant");
 
 app.set("view engine", "ejs");
@@ -65,7 +65,7 @@ app.post("/register", function(req, res){
             return res.render("register");
         }
         passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Welcome to PicArt");
+            req.flash("success", "Welcome to ABC Restaurant");
            res.redirect("/"); 
         });
     });
