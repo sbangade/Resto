@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>food</title>
+         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="/stylesheet/app.css" rel="stylesheet" type="text/css">
+        <link href="/stylesheet/menu.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+       <div class="container">
+           <div class="row">
+               <div class="logo">
+                   <img src="https://i.pinimg.com/originals/45/d3/4d/45d34df4612f4c50e88695e649e7a997.png">
+               </div>
+               <ul class="main-nav">
+      	    			<li><a href="/"> HOME </a></li>
+      	    			<li><a href="/menu"> MENU </a></li>
+      	    			<li><a href="/party"> PARTY </a></li>
+      	    			
+      	    			 
+      
+      <% if(!currentUser){ %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                    <% } else { %>
+                        <li><a href="#">Welcome <%= currentUser.username %></a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    <% } %>
+     
+      	    			
+      	    		   
+    </ul>
+  </li>
+      	    		</ul>
+      	    		
+           </div>
+       </div>
+    </nav>
+	<div class="container">
+	<% if(error && error.length > 0){ %>
+	  <div class="alert alert-danger" role="alert">
+      <%= error %>
+      </div>
+      <% } %>
+      	<% if(success && success.length > 0){ %>
+       <div class="alert alert-success" role="alert">
+      <%= success %>
+      </div>
+      <% } %>
+    </div>  
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+  
