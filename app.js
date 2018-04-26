@@ -9,8 +9,10 @@ var express    = require("express"),
     LocalStrategy= require("passport-local")
     
 var app = express();
-
+//mongodb://food:circle@ds259119.mlab.com:59119/restaurant
 mongoose.connect("mongodb://localhost/food_store_app");
+mongoose.connect("mongodb://food:circle@ds259119.mlab.com:59119/restaurant");
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : true}));
