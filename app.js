@@ -51,6 +51,10 @@ app.get("/menu", function(req, res){
 app.get("/order", function(req, res){
     res.render("order");
 });
+ 
+app.get("/report", function(req, res){
+    res.render("report");
+}); 
 
 // Registration
 app.get("/register", function(req, res){

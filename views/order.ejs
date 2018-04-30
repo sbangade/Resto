@@ -8,34 +8,47 @@
 				 <h3>The Classy Restaurant in the Town</h3>
 				 <hr>
 				 <h1>Order</h1>
-				<form>
-				 	<div class="order">
-				 		 <div><label>
-			Iteam Name:
-
-		<select name="Name" style="color:black">
-			<option>Name</option>
-			<option>Tea</option>
-			<option>coffee</option>
-			<option>Samosa</option>
-			<option>Cake</option>
+			
+              <table width="80%" border="0" style="color:black; margin-left:200px">
+    <tr>
+        <th>Itam</th>
+        <th>Rate(in RS.)</th>
+        <th>Total Amount</th>
+        
+    </tr>
+    <tr>
+        <td><select>
+        
+		<option>Name</option>
+		<option value="10" id="qty">Tea</option>
+        <option value="10" id="qty">Coffee</option>
+        <option value="15" id="qty">Samosa</option>
+        <option value="15" id="qty">Cake</option>
 		</select>
+</td>
+        <td><input id="prc" type="text" onchange="calculate()" /></td>
+        <td><input id="ttl" /></td>
+        <th style="color:black"><button onclick="window.location.href='/'">Submit</button></th>
+    </tr>
 
-		<div><label>
-			Iteam Quantity:
+    </table>
+    
+    <script type="text/javascript">
+    function calculate() {
+        var quantity = document.getElementById('qty').value;
+        var price = document.getElementById('prc').value;
+        var total = document.getElementById('ttl');
+        var result = quantity * price;
+        
+        total.value = result;
 
-		<select name="Quantity" style="color:black">
-			<option>Quantity</option>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-		</select>
-				 	</div>
-				     
-		<div><label for="name"> Total Amount: <input id="name" type="text" name="your name" placeholder="" value=""></label></div> 
-		<input type="submit" style="color:black" placeholder="submit">
-				 </form>
+
+    }
+
+</script>
+
+
+</body>
 				</div>
 			</div>
 		</div>
